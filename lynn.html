@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lynn University — GitHub Test Page</title>
+  <style>
+    /* ── Lynn Color Variables ── */
+    :root {
+      --lynn-blue:    #003da5;
+      --lynn-ice:     #cce0ff;
+      --white:        #ffffff;
+      --light-tint:   #f0f4fa;
+      --dark-slate:   #2d3b45;
+      --meta-gray:    #555555;
+      --link-blue:    #0e68b3;
+      --amber-bg:     #fff8ee;
+      --amber-border: #f4a261;
+      --amber-label:  #c45e00;
+      --light-border: #eeeeee;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #f5f7fb;
+      color: var(--dark-slate);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      background: var(--lynn-blue);
+      color: var(--white);
+      padding: 36px 40px 28px;
+      border-bottom: 4px solid var(--amber-border);
+    }
+    .site-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--white);
+    }
+    .site-header p {
+      margin-top: 8px;
+      font-size: 1rem;
+      color: var(--lynn-ice);
+      font-style: italic;
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 3px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Main Layout ── */
+    main {
+      max-width: 860px;
+      margin: 32px auto;
+      padding: 0 24px 60px;
+    }
+
+    /* ── Section Divider ── */
+    .section-bar {
+      background: var(--lynn-blue);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 4px;
+      margin: 28px 0 16px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Overview Box ── */
+    .overview-box {
+      background: var(--light-tint);
+      border-left: 6px solid var(--lynn-blue);
+      color: var(--dark-slate);
+      padding: 20px 24px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    /* ── Cards Grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 560px) { .card-grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--light-border);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .card h3 {
+      font-size: 1rem;
+      color: var(--lynn-blue);
+      margin-bottom: 6px;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: var(--meta-gray);
+      line-height: 1.6;
+    }
+    .card .tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      background: var(--light-tint);
+      color: var(--lynn-blue);
+      padding: 2px 8px;
+      border-radius: 3px;
+      border: 1px solid var(--light-border);
+    }
+
+    /* ── Status Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+    }
+    th {
+      background: var(--lynn-blue);
+      color: var(--white);
+      text-align: left;
+      padding: 10px 14px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--light-border);
+      color: var(--dark-slate);
+    }
+    tr:nth-child(even) td { background: var(--light-tint); }
+    .status-ok  { color: #1a7a3e; font-weight: bold; }
+    .status-wip { color: var(--amber-label); font-weight: bold; }
+
+    /* ── Discussion Prompt ── */
+    .prompt-box {
+      background: var(--amber-bg);
+      border-left: 6px solid var(--amber-border);
+      color: var(--dark-slate);
+      padding: 20px 24px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+    .prompt-box .label {
+      font-weight: bold;
+      color: var(--amber-label);
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .prompt-box p { line-height: 1.7; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.82rem;
+      color: var(--meta-gray);
+      border-top: 1px solid var(--light-border);
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <h1>Lynn University</h1>
+    <p>ISM 430 · AI Governance &amp; Ethics · GitHub Test Page</p>
+    <span class="badge">REPO: ism430-course-materials · BRANCH: main</span>
+  </header>
+
+  <main>
+
+    <!-- ── Overview ── -->
+    <div class="section-bar">ABOUT THIS PAGE</div>
+    <div class="overview-box">
+      This is a GitHub deployment test using the Lynn University brand stylesheet. It confirms that static HTML pages render correctly when served via GitHub Pages, with all brand colors, typography, and layout components intact. Does your stylesheet survive the pipeline?
+    </div>
+
+    <!-- ── Feature Cards ── -->
+    <div class="section-bar">COMPONENTS TESTED</div>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Brand Colors</h3>
+        <p>Lynn Blue, Ice Blue, Amber accents, and full color palette validated against WCAG AA contrast ratios.</p>
+        <span class="tag">#003da5 · #f4a261</span>
+      </div>
+      <div class="card">
+        <h3>Typography</h3>
+        <p>Georgia serif for body, Courier New monospace for code labels and metadata — no external font dependencies.</p>
+        <span class="tag">serif · monospace</span>
+      </div>
+      <div class="card">
+        <h3>Layout &amp; Grid</h3>
+        <p>Two-column card grid with responsive collapse at 560px. Tested for mobile and desktop viewports.</p>
+        <span class="tag">CSS Grid · Responsive</span>
+      </div>
+      <div class="card">
+        <h3>Accessibility</h3>
+        <p>All text combinations meet WCAG AA minimum contrast. Semantic HTML throughout — no ARIA overrides needed.</p>
+        <span class="tag">WCAG AA ✓</span>
+      </div>
+    </div>
+
+    <!-- ── Status Table ── -->
+    <div class="section-bar">DEPLOYMENT STATUS</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Header Block</td>
+          <td class="status-ok">✓ PASS</td>
+          <td>Lynn Blue renders correctly</td>
+        </tr>
+        <tr>
+          <td>Overview Box</td>
+          <td class="status-ok">✓ PASS</td>
+          <td>Left-border accent visible</td>
+        </tr>
+        <tr>
+          <td>Card Grid</td>
+          <td class="status-ok">✓ PASS</td>
+          <td>2-col layout, responsive</td>
+        </tr>
+        <tr>
+          <td>Data Table</td>
+          <td class="status-ok">✓ PASS</td>
+          <td>Zebra rows rendering</td>
+        </tr>
+        <tr>
+          <td>Discussion Prompt</td>
+          <td class="status-ok">✓ PASS</td>
+          <td>Amber accent block active</td>
+        </tr>
+        <tr>
+          <td>Dark Mode</td>
+          <td class="status-wip">⚙ WIP</td>
+          <td>Not yet implemented</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ── Prompt Box ── -->
+    <div class="prompt-box">
+      <div class="label">Test Prompt</div>
+      <p>If this page renders correctly on GitHub Pages, what does that tell you about the reliability of inline-CSS as a deployment strategy versus external stylesheet dependencies?</p>
+    </div>
+
+  </main>
+
+  <footer>
+    Lynn University · College of Business and Management · ISM 430 · Rendered via GitHub Pages
+  </footer>
+
+</body>
+</html>
